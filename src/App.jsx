@@ -73,8 +73,14 @@ function App() {
         />
       </Space>
 
+     
+      <div className="table_one">
+        <h1>Table 1</h1>  
       <TableUser dataUsers={dataUsers} />
+      </div>
 
+      <div className="input_form">
+        <h3>Введите данные</h3>
       <Input
         placeholder="Basic usage"
         value={dataUserPost.name}
@@ -94,17 +100,21 @@ function App() {
       <Input
         placeholder="Basic usage"
         value={dataUserPost.phoneNumber}
-        type="number"
+        type="phone_number"
         onChange={(e) => {
           setDataUserPost({ ...dataUserPost, phoneNumber: e.target.value });
         }}
       />
+      </div>
 
       <Button onClick={setPostData}>save user</Button>
 
       <Button onClick={getDataUser}>get data all users</Button>
 
+      <div className="table_two">
+        <h2>Table 2</h2>
       <TableUserAll dataUsers={allUsers} />
+      </div>
     </div>
   );
 }
